@@ -1,6 +1,5 @@
-
-#import turtle
-
+import time
+import turtle
 
 def hut():
     import turtle
@@ -125,36 +124,102 @@ def hut():
     turtle.hideturtle()
     turtle.penup()
     turtle.forward(535.5)
-    
     turtle.right(90)
     turtle.pendown()
     turtle.showturtle()
-    turtle.forward(20)
     
+    turtle.forward(30)
+    turtle.right(90)
+
+    turtle.begin_fill()
+    turtle.color("#001a33")
+    turtle.forward(180)
+    turtle.right(90)
+    turtle.forward(60)
     turtle.right(90)
     turtle.forward(180)
-    #turtle.right(90)
-    #turtle.forward(40)
-    #turtle.right(90)
-    #turtle.forward(180)
+    turtle.end_fill()
 
-    turtle.color("#001a33")
+    #window
 
+    turtle.hideturtle()
+    turtle.left(90)
+    turtle.penup()
+    turtle.forward(360.6)
+    turtle.left(90)
+    turtle.forward(200)
+    turtle.pendown()
+    turtle.showturtle()
+    
+    turtle.begin_fill()
+    turtle.right(90)
+    turtle.forward(60)
+    turtle.right(90)
+    turtle.forward(60)
+    turtle.right(90)
+    turtle.forward(60)
+    turtle.right(90)
+    turtle.forward(60)
+    turtle.end_fill()
+    turtle.hideturtle()
 
+    #Welcome text
+    turtle.penup()
+    turtle.backward(300)
+    turtle.left(90)
+    turtle.forward(180)
+    turtle.pendown()
+    turtle.write("Welcome", font=('castellar', 30, 'bold'), align='center')
+
+    time.sleep(5)
     turtle.bye()
+    
+    turtle.Turtle._screen = None  # force recreation of singleton Screen object
+    turtle.TurtleScreen._RUNNING = True  # only set upon TurtleScreen() definition
     
 def flower():
     import turtle
-    turtle.color("#cca300")
-    turtle.begin_fill()
-    turtle.up()
-    turtle.right(90)
-    turtle.forward(200)
-    turtle.down()
-    turtle.right(90)
-    turtle.forward(200)
-    turtle.bye()
-#hut()
-#flower()
+    turtle.color("#800080") #pink
+    drawing_area2 = turtle.Screen()
+    drawing_area2.bgcolor("#ffe6ff")
+    drawing_area2.title("Small flower for you")
+    turtle.left(90)
+    def petal():
+        turtle.circle (72, 72)
+        turtle.left(72)
+        turtle.circle(72, 144)
+    for i in range(5):
+        petal()
+    
+    turtle.hideturtle()
+    turtle.penup()
 
+    #bringing pointer to center
+    turtle.left(135)
+    turtle.circle(48, 45)
+    turtle.right(90)
+    turtle.pendown()
+
+
+    turtle.begin_fill()    
+    turtle.circle(10)
+    turtle.end_fill()
+
+    #print(turtle.pos())
+
+    #writing
+    turtle.up()
+    turtle.setpos(x=-13, y=120)
+    turtle.down()
+    turtle.write("Good day..", font=('castellar', 30, 'bold'), align='left')
+    #turtle.done()
+    time.sleep(3)
+    turtle.bye()
+    
+    turtle.Turtle._screen = None  # force recreation of singleton Screen object
+    turtle.TurtleScreen._RUNNING = True  # only set upon TurtleScreen() definition
+
+#hut()
+
+#flower()
 
