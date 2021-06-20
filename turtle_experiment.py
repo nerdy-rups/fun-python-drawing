@@ -16,7 +16,12 @@ turtle.forward(500)
 turtle.color('green')
 turtle.left(45)
 turtle.forward(40)
+turtle.hideturtle()
+
+turtle.clear()
+
+turtle.begin_fill()
+turtle.circle(70)
+turtle.end_fill()
 
 turtle.done()
-
-
